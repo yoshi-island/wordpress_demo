@@ -1,0 +1,287 @@
+/*
+Theme Name: Yoshi Demo Theme
+Author: yoshi
+Description: hoge
+Version: 1.0
+*/
+
+
+body {
+  font-family: 'Kiwi Maru', serif;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #616161;
+  margin: 0;
+  padding: 0;
+}
+
+.transparent-box {
+  background: #ffffff;
+  opacity: 0.8;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+a {
+  color: #1e90ff;
+}
+
+html{
+    scroll-behavior: smooth; /* scroll-to-top用の設定 */
+}
+
+/* header
+   ========================================================================== */
+header {
+  height: 250px;
+  background-image: url(images/yashinoki.jpg);
+  position: relative;
+}
+
+header a {
+  text-decoration: none;
+  color: #616161;
+}
+
+header .transparent-box {
+  padding: 10px;
+  font-size: 30px;
+  height: 100px;
+  width: 250px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  text-align:center;
+}
+
+/* header-menu
+   ========================================================================== */
+#header-menu {
+  height: 50px;
+  line-height:50px; /* 上下中央に文字を配置 */
+}
+
+#header-menu ul{
+  height: 100%;
+  display: flex; /* リストを横並びにする */
+  padding: 0;
+  margin: 0;
+  justify-content: space-between; /* スペースは間に */
+  text-align: center;
+}
+
+#header-menu ul li{
+  font-size: 20px;
+  width: 33%; /* 3つボタンがあるので幅を3等分 */
+  list-style: none;
+}
+
+#header-menu ul li a{
+  text-decoration: none;
+  color: #616161;
+  display: inline-block; /* クリック幅を横いっぱいまで */
+  width: 100%;  /* クリック幅を横いっぱいまで */
+  height: 100%;  /* クリック幅を横いっぱいまで */
+}
+
+/* wrapper
+   ========================================================================== */
+#wrapper {
+  width: 100%;
+  display: flex;
+  background-image: url(images/ocean.jpg);
+  background-position: bottom;
+}
+
+aside {
+  width: 250px;
+  height: 100%; /* 子要素(aside)の高さに親要素(wrapper)を合わせる */
+  padding: 10px;
+}
+
+#content {
+  width: 100%;
+  height: 100%; /* 子要素(aside)の高さに親要素(wrapper)を合わせる */
+}
+
+@media screen and (min-width:751px) {
+  aside {
+    display: block;
+  }
+
+  #content {
+    padding: 10px 10px 10px 0; /* asideでpaddingをとっているので左は0 */
+  }
+}
+
+@media screen and (max-width:750px) {
+  aside {
+    display: none;
+  }
+
+  #content {
+    padding: 10px; /* spではasideが無くなるので左もpaddingを取る */
+  }
+}
+
+/* aside
+   ========================================================================== */
+.widget {
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+/* default-content
+   ========================================================================== */
+#default-content {
+  height: 100%;
+  display: flex; /* 子要素の高さを親要素(recent-post)に合わせる */
+}
+
+#default-content .transparent-box{
+  padding: 10px;
+  width: 100%;
+}
+
+/* site-description
+   ========================================================================== */
+#site-description {
+  height: 250px;
+  display: flex; /* 子要素の高さを親要素(site-description)に合わせる */
+}
+
+#site-description .transparent-box{
+  padding: 10px;
+  width: 100%;
+}
+
+/* recent-post
+   ========================================================================== */
+#recent-post {
+  height: 100%;
+  display: flex; /* 子要素の高さを親要素(recent-post)に合わせる */
+}
+
+#recent-post .transparent-box{
+  margin-top: 10px;
+  padding: 10px;
+  width: 100%;
+}
+
+/* single-post
+   ========================================================================== */
+#single-post {
+  height: 100%;
+  display: flex; /* 子要素の高さを親要素(recent-post)に合わせる */
+}
+
+#single-post .transparent-box{
+  padding: 10px;
+  width: 100%;
+}
+
+/* footer
+   ========================================================================== */
+footer {
+  height: 50px;
+  line-height: 50px; /* 上下中央に文字を配置 */
+  padding: 10px;
+  text-align: center;
+}
+
+/* scroll-to-top
+   ========================================================================== */
+#scroll-to-top {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  z-index: 100;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background: #ffffff;
+  opacity: 0.8;
+  font-size: 30px;
+  text-align: center;
+}
+
+#scroll-to-top-link {
+  text-decoration: none;
+  color: #616161
+}
+
+/* spmenu
+   ========================================================================== */
+@media screen and (min-width:751px) {
+  #spmenu-wrapper {
+    display: none;
+  }
+}
+
+@media screen and (max-width:750px) {
+  #hamburger {
+    position: fixed;
+    left: 10px;
+    top: 40px;
+    z-index: 102; /* sp-menuより前 */
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background: #ffffff;
+    opacity: 0.8;
+  }
+  
+  .hamburger-line {
+    position: absolute;
+    height: 2px;
+    left: 10px;
+    width: 30px;
+    background: #616161;
+    transition: 0.5s; /* transformで動かす時のスピード */
+  }
+  
+  #hamburger-line-1 {
+    top: 12px;
+  }
+  #hamburger-line-2 {
+    top: 24px;
+  }
+  #hamburger-line-3 {
+    top: 36px;
+  }
+  
+  .spmenu-open #hamburger-line-1 {
+    transform: rotate(-45deg); /* クリックされたら回転 */
+    top: 24px;
+  }
+  .spmenu-open #hamburger-line-2 {
+    opacity: 0; /* クリックされたら真ん中の線は見えないようにする */
+  }
+  .spmenu-open #hamburger-line-3 {
+    transform: rotate(45deg); /* クリックされたら回転 */
+    top: 24px;
+  }
+  
+  #sp-menu {
+    position: fixed;
+    left: -250px; /* クリックされる前は画面の外左側に隠す */
+    top: 0;
+    width: 250px;
+    height: 100vh; /* 画面いっぱい */
+    z-index: 101; /* hamburgerより後ろ */
+    overflow-y: auto; /* メニューが多くなったらスクロールできるように */
+    transition: 0.5s; /* transformで動かす時のスピード */
+    background: #ffffff;
+    opacity: 0.9;
+  }
+  .spmenu-open #sp-menu {
+    transform: translateX(250px)  /* クリックされたら画面の中へ */
+  }
+  
+  #sp-menu-widget-area {
+    margin-top: 100px; /* ハンバーガーに被らないように下げる */
+  }
+}

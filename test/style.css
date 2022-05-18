@@ -1,0 +1,124 @@
+/*
+Theme Name: Yoshi Test Theme
+Author: yoshi
+Description: hoge
+Version: 1.0
+*/
+
+body {
+  background-image: url(yashinoki.jpg)
+}
+
+#wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* スペースは要素の間に */
+}
+
+aside {
+  width: 30%;
+  padding: 10px;
+  background: #ffffff;
+  opacity: 0.8;
+}
+
+#contents {
+  width: 65%;
+  height: 500px;
+  padding: 10px;
+  background: #ffffff;
+  opacity: 0.8;
+}
+
+/* PCではサイドバーを表示 */
+@media screen and (min-width:751px) {
+  aside {
+    display: block;
+  }
+}
+
+/* SPではサイドバーを非表示 */
+@media screen and (max-width:750px) {
+  aside {
+    display: none;
+  }
+
+  #contents {
+    width: 100%; /* サイドバーが無くなった分、コンテンツの幅を広げる */
+  }
+}
+
+
+/* spmenu
+   ========================================================================== */
+@media screen and (min-width:751px) {
+  #spmenu-wrapper {
+    display: none;
+  }
+}
+
+@media screen and (max-width:750px) {
+  #hamburger {
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    z-index: 102; /* sp-menuより前 */
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background: #ffffff;
+    opacity: 0.8;
+  }
+
+  .hamburger-line {
+    position: absolute;
+    height: 2px;
+    left: 10px;
+    width: 30px;
+    background: #616161;
+    transition: 0.5s; /* transformで動かす時のスピード */
+  }
+
+  #hamburger-line-1 {
+    top: 12px;
+  }
+  #hamburger-line-2 {
+    top: 24px;
+  }
+  #hamburger-line-3 {
+    top: 36px;
+  }
+
+  .spmenu-open #hamburger-line-1 {
+    transform: rotate(-45deg); /* クリックされたら回転 */
+    top: 24px;
+  }
+  .spmenu-open #hamburger-line-2 {
+    opacity: 0; /* クリックされたら真ん中の線は見えないようにする */
+  }
+  .spmenu-open #hamburger-line-3 {
+    transform: rotate(45deg); /* クリックされたら回転 */
+    top: 24px;
+  }
+
+  #sp-menu {
+    position: fixed;
+    left: -250px; /* クリックされる前は画面の外左側に隠す */
+    top: 0;
+    width: 250px;
+    height: 100vh; /* 画面いっぱい */
+    z-index: 101; /* hamburgerより後ろ */
+    overflow-y: auto; /* メニューが多くなったらスクロールできるように */
+    transition: 0.5s; /* transformで動かす時のスピード */
+    background: #ffffff;
+    opacity: 0.9;
+  }
+  .spmenu-open #sp-menu {
+    transform: translateX(250px)  /* クリックされたら画面の中へ */
+  }
+
+  #sp-menu-widget-area {
+    margin-top: 60px; /* ハンバーガーに被らないように下げる */
+    padding: 10px;
+  }
+}
