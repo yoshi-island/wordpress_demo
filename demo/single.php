@@ -17,6 +17,14 @@
           <?php echo get_the_date( 'Y-m-d' ); ?>
           <?php the_content(); ?>
         </section>
+        <div id="page-navi">
+          <div id="next-post">
+            <?php next_post_link('&laquo; %link'); ?>
+          </div>
+          <div id="previous-post">
+            <?php previous_post_link('%link &raquo;'); ?>
+          </div>
+        </div>
       </div>
     </div>
   </div>

@@ -23,7 +23,7 @@
         <ul>
           <!-- 新着記事リスト取得 -->
           <?php
-            $args = array( 'posts_per_page' => 5, 'order'=> 'ASC', 'orderby' => 'date' );
+            $args = array( 'posts_per_page' => 5, 'order'=> 'DESC', 'orderby' => 'date' );
             $postslist = get_posts( $args );
             foreach ( $postslist as $post ) :
             setup_postdata( $post );

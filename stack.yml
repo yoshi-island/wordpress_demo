@@ -17,6 +17,7 @@ services:
       - wordpress:/var/www/html
       - ~/demo:/var/www/html/wp-content/themes/demo
       - ~/test:/var/www/html/wp-content/themes/test
+      - ~/helloworld:/var/www/html/wp-content/themes/helloworld
 
   db:
     image: mysql:5.7

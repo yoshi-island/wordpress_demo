@@ -1,7 +1,7 @@
 <nav id="header-menu">
     <ul>
         <li>
-            <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+            <a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>">
               Blog
             </a>
         </li>
